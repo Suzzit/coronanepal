@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Corona Update</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- component -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="flex flex-col justify-center items-center">
+        <!-- Information Modal -->
+        <div class="md:w-1/3 sm:w-full rounded-lg shadow-lg bg-indigo-900 my-16">
+            <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+                <div>
+                    <i class="fas fa-info-circle bg-white h-0" ></i>
+                    <span class="font-bold text-white text-lg">Total Cases</span>
+                </div>
+            </div>
+
+            <div class="totalcases px-10 py-5 text-white">
+                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </div>
+
+        </div>
+        <!-- Information Modal -->
+        <div class="md:w-1/3 sm:w-full rounded-lg shadow-lg bg-blue-600 my-16">
+            <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+                <div>
+                    <i class="fas fa-heartbeat"></i>
+                    <span class="font-bold text-white text-lg">Recovered</span>
+                </div>
+            </div>
+
+            <div class="recovered px-10 py-5 text-white">
+                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </div>
+
+        </div>
+
+        <!-- Information Modal -->
+        <div class="md:w-1/3 sm:w-full rounded-lg shadow-lg bg-red-600 my-16">
+            <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+                <div>
+                    <i class="fas fa-skull-crossbones"></i>
+                    <span class="font-bold text-white text-lg">Deaths</span>
+                </div>
+            </div>
+
+            <div class="deaths px-10 py-5 text-white">
+                Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </div>
+
+        </div>
+
+<script>
+let url = "https://nepalcorona.info/api/v1/data/nepal";
+let total = document.querySelector(".totalcases");
+let recovered = document.querySelector(".recovered");
+let deaths = document.querySelector(".deaths");
+
+fetch(url).then((res)=>{
+return res.json();
+}).then((data)=>{
+    
+    total.innerText = data.tested_total;
+    recovered.innerText = data.recovered;
+    deaths.innerText = data.deaths;
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
